@@ -1,6 +1,6 @@
 exit 1
 
-openssl genpkey -algorithm ed25519 > ../ca-priv/ca.key
+openssl genpkey -algorithm ec -pkeyopt ec_paramgen_curve:P-256 > ../ca-priv/ca.key
 openssl req -x509 -key ../ca-priv/ca.key -days 3650 > ca.pem
 : '
 Country Name (2 letter code) [AU]:.

@@ -1,6 +1,6 @@
 exit 1
 
-openssl genpkey -algorithm ed25519 > ../ca-priv/i_myl7_org.key
+openssl genpkey -algorithm ec -pkeyopt ec_paramgen_curve:P-256 > ../ca-priv/i_myl7_org.key
 openssl req -new -key ../ca-priv/i_myl7_org.key -reqexts san -config <(cat /etc/ssl/openssl.cnf <(printf "\n[san]\nsubjectAltName=DNS:i.myl7.org,DNS:*.i.myl7.org")) > i_myl7_org.csr
 : '
 Country Name (2 letter code) [AU]:.
@@ -14,4 +14,4 @@ Email Address []:myl@myl.moe
 A challenge password []:
 An optional company name []:
 '
-openssl x509 -req -in i_myl7_org.csr -CA ca.pem -CAkey ../ca-priv/ca.key -days 3650 > i_myl7_org.pem
+openssl x509 -req -in i_myl7_org.csr -CA ca.pem -CAkey ../ca-priv/ca.key -days 3650 -copy_extensions copy > i_myl7_org.pem
