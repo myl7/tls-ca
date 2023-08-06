@@ -1,0 +1,2 @@
+# Private keys would not be stored in the directory. Just in case.
+*.key
