@@ -1,2 +1,2 @@
-# Private keys would not be stored in the directory. Just in case.
+# Private keys would not be stored in the repo. Just in case.
 *.key
