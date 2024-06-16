@@ -1,7 +1,7 @@
 exit 1
 
-openssl genpkey -algorithm ec -pkeyopt ec_paramgen_curve:P-256 > ../ca-priv/ca.key
-openssl req -x509 -key ../ca-priv/ca.key -days 3650 > ca.pem
+openssl genpkey -algorithm ec -pkeyopt ec_paramgen_curve:P-256 > ../tls-ca-keys/ca.key
+openssl req -x509 -key ../tls-ca-keys/ca.key -days 3650 > ca.pem
 : '
 Country Name (2 letter code) [AU]:.
 State or Province Name (full name) [Some-State]:.
